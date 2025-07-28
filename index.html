@@ -15,18 +15,35 @@
       background: url('background.jpg') center center/cover no-repeat fixed;
       font-family: 'Segoe UI', Arial, sans-serif;
       color: #fff;
-      backdrop-filter: blur(1px);
       position: relative;
+      /* Blur & overlay */
+    }
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 20, 20, 0.75);
+      z-index: 0;
+      backdrop-filter: blur(1.5px);
     }
     .menu-box {
-      background: rgba(16, 16, 16, 0.89);
+      background: rgba(28, 28, 28, 0.89);
       border-radius: 18px;
-      max-width: 430px;
+      max-width: 440px;
       margin: 55px auto 0 auto;
       box-shadow: 0 8px 28px #0008;
       padding: 24px 20px 32px 20px;
       min-height: 480px;
       text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .logo-top {
+      width: 82px;
+      margin: 26px auto 6px auto;
+      display: block;
+      border-radius: 30px;
+      box-shadow: 0 4px 14px #0006;
+      z-index: 2;
       position: relative;
     }
     h1 {
@@ -58,6 +75,8 @@
       justify-content: center;
       margin: 25px 0 0 0;
       gap: 30px;
+      z-index: 2;
+      position: relative;
     }
     .nav-btns button {
       background: #ff6600;
@@ -77,11 +96,16 @@
     }
     @media (max-width: 480px) {
       .menu-box { max-width: 97vw; padding: 7vw 2vw;}
+      .logo-top { width: 60px;}
       h1 { font-size: 1.3em;}
     }
   </style>
 </head>
 <body>
+  <div class="bg-overlay"></div>
+  <!-- اللوجو في الأعلى -->
+  <img src="logo.png" alt="archive café logo" class="logo-top">
+
   <div class="menu-box" id="menuBox">
     <!-- محتوى المنيو يظهر هنا ديناميكياً -->
   </div>
